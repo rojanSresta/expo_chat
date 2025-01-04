@@ -1,0 +1,77 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "Kane Smith",
+        "profilePic": "https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.jpg",
+        "lastMessage": "Hey, how are you doing?"
+      },
+      {
+        "id": 2,
+        "username": "Rihana Shrestha",
+        "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPMleCtmtZDkozjS4o1Ka5n__J1a-xYGIlWDkjZVIiQysOd4zg1TIEo28&s",
+        "lastMessage": "Let's catch up tomorrow."
+      },
+      {
+        "id": 3,
+        "username": "Mike Brown",
+        "profilePic": "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid",
+        "lastMessage": "Thanks for the update!"
+      },
+      {
+        "id": 4,
+        "username": "Rihana Karki",
+        "profilePic": "https://cdn.pixabay.com/photo/2021/06/11/12/26/woman-6328478_1280.jpg",
+        "lastMessage": "Thanks for the update!"
+      },
+      {
+        "id": 5,
+        "username": "Kane Smith",
+        "profilePic": "https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.jpg",
+        "lastMessage": "Hey, how are you doing?"
+      },
+      {
+        "id": 6,
+        "username": "Rihana Shrestha",
+        "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPMleCtmtZDkozjS4o1Ka5n__J1a-xYGIlWDkjZVIiQysOd4zg1TIEo28&s",
+        "lastMessage": "Let's catch up tomorrow."
+      },
+      {
+        "id": 7,
+        "username": "Mike Brown",
+        "profilePic": "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid",
+        "lastMessage": "Thanks for the update!"
+      },
+      {
+        "id": 8,
+        "username": "Rihana Karki",
+        "profilePic": "https://cdn.pixabay.com/photo/2021/06/11/12/26/woman-6328478_1280.jpg",
+        "lastMessage": "Thanks for the update!"
+      },
+      {
+        "id": 9,
+        "username": "Kane Smith",
+        "profilePic": "https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.jpg",
+        "lastMessage": "Hey, how are you doing?"
+      },
+      {
+        "id": 10,
+        "username": "Rihana Shrestha",
+        "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPMleCtmtZDkozjS4o1Ka5n__J1a-xYGIlWDkjZVIiQysOd4zg1TIEo28&s",
+        "lastMessage": "Let's catch up tomorrow."
+      },
+      {
+        "id": 11,
+        "username": "Mike Brown",
+        "profilePic": "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid",
+        "lastMessage": "Thanks for the update!"
+      },
+      {
+        "id": 12,
+        "username": "Rihana Karki",
+        "profilePic": "https://cdn.pixabay.com/photo/2021/06/11/12/26/woman-6328478_1280.jpg",
+        "lastMessage": "Thanks for the update!"
+      }
+    ]
+  }
+  
