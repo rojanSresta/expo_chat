@@ -1,38 +1,41 @@
-import { View, Text, StyleSheet, Image, FlatList } from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { ThemedView } from "./ThemedView";
 import { ThemedText } from "./ThemedText";
 import userData from "../Data.json";
 
-const ContactMessage = () => {
+const ChatList = () => {
   return (
     <>
       <FlatList
         data={userData.users}
         keyExtractor={user=>user.id.toString()}
         renderItem={({ item }) => (
+          // add a onPress over here where when the user presses this section it should be redirected to another chat screen
+          <TouchableOpacity> 
           <ThemedView style={styles.container}>
             <Image
               style={styles.profilePic}
               source={{uri: item.profilePic}}
-            />
+              />
             <ThemedView>
               <ThemedText style={styles.userName}>{item.username}</ThemedText>
               <ThemedText style={styles.lastMsg}>{item.lastMessage}</ThemedText>
             </ThemedView>
           </ThemedView>
+              </TouchableOpacity>
         )}
       />
     </>
   );
 };
 
-export default ContactMessage;
+export default ChatList;
 
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
-    paddingVertical: 5,
+    paddingVertical: 15,
     display: "flex",
     flexDirection: "row",
   },
@@ -46,7 +49,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   lastMsg: {
-    marginTop: 5,
+    marginTop: 8,
     color: "gray",
   },
 });
