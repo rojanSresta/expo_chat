@@ -1,30 +1,53 @@
-import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { ThemedView } from "./ThemedView";
 import { ThemedText } from "./ThemedText";
 import userData from "../Data.json";
+import { useRouter } from "expo-router";
 
 const ChatList = () => {
+  const router = useRouter();
+
+  const renderItem = ({ item }: { item: any }) => {
+
+    const navigateToChatScreen =()=>{
+      router.push({
+        pathname: '/chat',
+        params: {
+          id: item.id,
+          username: item.username,
+        },
+      });
+    };
+
+    return (
+      <TouchableOpacity
+        onPress={navigateToChatScreen}
+      >
+        <ThemedView style={styles.container}>
+          <Image style={styles.profilePic} source={{ uri: item.profilePic }} />
+          <ThemedView>
+            <ThemedText style={styles.userName}>{item.username}</ThemedText>
+            <ThemedText style={styles.lastMsg}>{item.lastMessage}</ThemedText>
+          </ThemedView>
+        </ThemedView>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <>
       <FlatList
         data={userData.users}
-        keyExtractor={user=>user.id.toString()}
-        renderItem={({ item }) => (
-          // add a onPress over here where when the user presses this section it should be redirected to another chat screen
-          <TouchableOpacity> 
-          <ThemedView style={styles.container}>
-            <Image
-              style={styles.profilePic}
-              source={{uri: item.profilePic}}
-              />
-            <ThemedView>
-              <ThemedText style={styles.userName}>{item.username}</ThemedText>
-              <ThemedText style={styles.lastMsg}>{item.lastMessage}</ThemedText>
-            </ThemedView>
-          </ThemedView>
-              </TouchableOpacity>
-        )}
+        keyExtractor={(user) => user.id.toString()}
+        renderItem={renderItem}
       />
     </>
   );
