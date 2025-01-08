@@ -16,7 +16,7 @@ interface LoginProps {
 const LoginScreen = ({setLogin}: LoginProps) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(true);
   const [errors, setErrors] = useState<Errors>({});
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
@@ -77,7 +77,6 @@ const LoginScreen = ({setLogin}: LoginProps) => {
               autoCapitalize="none"
             />
             <TextInput
-              textContentType="emailAddress"
               style={styles.input}
               placeholder="Enter password"
               secureTextEntry={showPassword?true:false}
