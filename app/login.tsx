@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Button, TouchableOpacity } from "react-native";
+import { StyleSheet, TextInput, Button, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";

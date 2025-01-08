@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import LoginScreen from "../login";
 
 export default function HomeScreen() {
-  const [login, setLogin] = useState<boolean>(false);
+  const [login, setLogin] = useState<boolean>(true);
   return (
     <>
       {login ? (
