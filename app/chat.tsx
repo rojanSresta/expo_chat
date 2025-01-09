@@ -2,22 +2,32 @@ import React, { useState } from "react";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 import { useSearchParams } from "expo-router/build/hooks";
-import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, useColorScheme } from "react-native";
-import data from "@/Data.json"
-import { IconSymbol } from "@/components/ui/IconSymbol";
-import { loadPartialConfig } from "@babel/core";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+import contactData from "@/Data.json";
 
 const ChatScreen = () => {
-  const [message, setMessage] = useState<string>('');
-  const colorScheme = useColorScheme();
-    
+  const [message, setMessage] = useState<string>("");
   const searchParams = useSearchParams();
-  const userId = searchParams.get("id");
 
-  const handleMessageSent = ()=>{
-    console.log("message sent");
-    
+  // get method always returns a string | null value
+  const contactId = searchParams.get("id");
+
+  if (!contactId) {
+    throw new Error("ID is null");
   }
+
+  const messageRecord = contactData.contacts[parseInt(contactId) - 1].messages;
+
+  const handleMessageSent = () => {
+    console.log("message: ", message);
+  };
 
   return (
     <ThemedView style={styles.container}>
@@ -28,13 +38,14 @@ const ChatScreen = () => {
           </TouchableOpacity>
           <Image
             source={{
-              uri: data.users.find(user=>user.id.toString() === userId)
-                ?.profilePic || 'https://as1.ftcdn.net/v2/jpg/02/99/15/90/1000_F_299159013_99C8UfXfWP6wJJD5C2szwH4pw9pfS8PR.jpg',
+              uri:
+                contactData.contacts[parseInt(contactId) - 1].profilePic ??
+                "https://randomuser.me/api/portraits/women/44.jpg",
             }}
             style={styles.profilePic}
           />
           <Text style={styles.name}>
-            {searchParams.get("username")?.split(' ')[0]}
+            {searchParams.get("contactName")?.split(" ")[0]}
           </Text>
         </ThemedView>
         <ThemedView style={styles.calls}>
@@ -43,17 +54,36 @@ const ChatScreen = () => {
           <Text style={styles.icons}>I</Text>
         </ThemedView>
       </ThemedView>
+
       <ScrollView style={styles.chatSection}>
-        <ThemedText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui tempora  itaque! Illo aspernatur maxime impedit molestiae!</ThemedText>
+        {messageRecord.map((message, index) =>
+          message.send ? (
+            <ThemedView key={index} style={styles.msgBoxSend}>
+              <ThemedText style={styles.sendMsgText}>{message.msg}</ThemedText>
+            </ThemedView>
+          ) : (
+            <ThemedView key={index} style={styles.msgBoxRecieve}>
+              <ThemedText style={styles.receiveMsgText}>
+                {message.msg}
+              </ThemedText>
+            </ThemedView>
+          )
+        )}
       </ScrollView>
+
       <ThemedView style={styles.typeSection}>
-        <TextInput placeholder="Message"
-        placeholderTextColor={'white'}
-        onChangeText={(newMsg)=>setMessage(newMsg)}
-        defaultValue={message}
-        style={styles.typeBox}/>
+        <TextInput
+          placeholder="Message"
+          placeholderTextColor={"white"}
+          onChangeText={(newMsg) => setMessage(newMsg)}
+          defaultValue={message}
+          style={styles.typeBox}
+        />
         <TouchableOpacity onPress={handleMessageSent}>
-          <IconSymbol size={28} name="paperplane.fill" color={colorScheme ?? 'light'}/>
+          <Image
+            style={styles.sendIcon}
+            source={require("@/assets/images/send.png")}
+          />
         </TouchableOpacity>
       </ThemedView>
     </ThemedView>
@@ -109,24 +139,61 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 50,
     marginTop: 10,
-    marginLeft: 10
+    marginLeft: 10,
   },
   chatSection: {
-    height: "80%",
-    backgroundColor: "red",
+    height: "auto",
+    padding: 5,
+    paddingTop: 10,
+    backgroundColor: "#202129",
   },
   typeSection: {
-    height: "10%",
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    height: "12%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingBottom: 35,
+    paddingHorizontal: 5,
+    marginVertical: 15,
   },
-  typeBox:{
-    color: 'white',
-    marginBottom: 30,
-    paddingHorizontal: 20,
-    paddingVertical: 30,
-    fontSize: 15
-  }
+  typeBox: {
+    color: "white",
+    fontSize: 15,
+    backgroundColor: "gray",
+    width: "88%",
+    borderRadius: 50,
+    paddingHorizontal: 15,
+    height: 40,
+  },
+  sendIcon: {
+    width: 30,
+    height: 30,
+  },
+  msgBoxSend: {
+    alignSelf: "flex-end",
+    backgroundColor: "#DCF8C6", 
+    padding: 10, 
+    borderRadius: 10, 
+    maxWidth: '75%',
+    marginBottom: 8,
+  },
+  sendMsgText: {
+    fontSize: 16,
+    color: "#000",
+  },
+  msgBoxRecieve: {
+    alignSelf: "flex-start", 
+    backgroundColor: "#FFFFFF", 
+    padding: 10, 
+    borderRadius: 10, 
+    maxWidth: "75%", 
+    marginBottom: 8, 
+    borderWidth: 1, 
+    borderColor: "#E0E0E0", 
+  },
+  receiveMsgText: {
+    fontSize: 16, 
+    color: "#000", 
+  },
 });

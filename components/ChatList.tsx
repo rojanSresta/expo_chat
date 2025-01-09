@@ -7,22 +7,29 @@ import {
 import React from "react";
 import { ThemedView } from "./ThemedView";
 import { ThemedText } from "./ThemedText";
-import userData from "../Data.json";
+import contactData from "../Data.json";
 import { useRouter } from "expo-router";
+
+interface Message{
+  send: boolean;
+  msg: string;
+}
+
+interface ContactPropType{
+  id: number;
+  contactName: string;
+  profilePic: string;
+  lastMessage: string;
+  messages: Message[];
+}
 
 const ChatList = () => {
   const router = useRouter();
 
-  const renderItem = ({ item }: { item: any }) => {
+  const renderItem = ({ item }: {item: ContactPropType}) => {
 
-    const navigateToChatScreen =()=>{
-      router.push({
-        pathname: '/chat',
-        params: {
-          id: item.id,
-          username: item.username,
-        },
-      });
+    const navigateToChatScreen = () => {
+      router.push(`/chat?id=${item.id}&contactName=${encodeURIComponent(item.contactName)}`);
     };
 
     return (
@@ -32,7 +39,7 @@ const ChatList = () => {
         <ThemedView style={styles.container}>
           <Image style={styles.profilePic} source={{ uri: item.profilePic }} />
           <ThemedView>
-            <ThemedText style={styles.userName}>{item.username}</ThemedText>
+            <ThemedText style={styles.contactName}>{item.contactName}</ThemedText>
             <ThemedText style={styles.lastMsg}>{item.lastMessage}</ThemedText>
           </ThemedView>
         </ThemedView>
@@ -43,8 +50,8 @@ const ChatList = () => {
   return (
     <>
       <FlatList
-        data={userData.users}
-        keyExtractor={(user) => user.id.toString()}
+        data={contactData.contacts}
+        keyExtractor={(contact) => contact.id.toString()}
         renderItem={renderItem}
       />
     </>
@@ -66,7 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginRight: 10,
   },
-  userName: {
+  contactName: {
     fontSize: 18,
   },
   lastMsg: {

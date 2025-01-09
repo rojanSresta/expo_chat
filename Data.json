@@ -1,77 +1,148 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "Kane Smith",
-        "profilePic": "https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.jpg",
-        "lastMessage": "Hey, how are you doing?"
-      },
-      {
-        "id": 2,
-        "username": "Rihana Shrestha",
-        "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPMleCtmtZDkozjS4o1Ka5n__J1a-xYGIlWDkjZVIiQysOd4zg1TIEo28&s",
-        "lastMessage": "Let's catch up tomorrow."
-      },
-      {
-        "id": 3,
-        "username": "Mike Brown",
-        "profilePic": "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid",
-        "lastMessage": "Thanks for the update!"
-      },
-      {
-        "id": 4,
-        "username": "Rihana Karki",
-        "profilePic": "https://cdn.pixabay.com/photo/2021/06/11/12/26/woman-6328478_1280.jpg",
-        "lastMessage": "Thanks for the update!"
-      },
-      {
-        "id": 5,
-        "username": "Kane Smith",
-        "profilePic": "https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.jpg",
-        "lastMessage": "Hey, how are you doing?"
-      },
-      {
-        "id": 6,
-        "username": "Rihana Shrestha",
-        "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPMleCtmtZDkozjS4o1Ka5n__J1a-xYGIlWDkjZVIiQysOd4zg1TIEo28&s",
-        "lastMessage": "Let's catch up tomorrow."
-      },
-      {
-        "id": 7,
-        "username": "Mike Brown",
-        "profilePic": "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid",
-        "lastMessage": "Thanks for the update!"
-      },
-      {
-        "id": 8,
-        "username": "Rihana Karki",
-        "profilePic": "https://cdn.pixabay.com/photo/2021/06/11/12/26/woman-6328478_1280.jpg",
-        "lastMessage": "Thanks for the update!"
-      },
-      {
-        "id": 9,
-        "username": "Kane Smith",
-        "profilePic": "https://t4.ftcdn.net/jpg/02/45/56/35/360_F_245563558_XH9Pe5LJI2kr7VQuzQKAjAbz9PAyejG1.jpg",
-        "lastMessage": "Hey, how are you doing?"
-      },
-      {
-        "id": 10,
-        "username": "Rihana Shrestha",
-        "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPMleCtmtZDkozjS4o1Ka5n__J1a-xYGIlWDkjZVIiQysOd4zg1TIEo28&s",
-        "lastMessage": "Let's catch up tomorrow."
-      },
-      {
-        "id": 11,
-        "username": "Mike Brown",
-        "profilePic": "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid",
-        "lastMessage": "Thanks for the update!"
-      },
-      {
-        "id": 12,
-        "username": "Rihana Karki",
-        "profilePic": "https://cdn.pixabay.com/photo/2021/06/11/12/26/woman-6328478_1280.jpg",
-        "lastMessage": "Thanks for the update!"
-      }
-    ]
-  }
-  
+  "contacts": [
+    {
+      "id": 1,
+      "contactName": "Sophia Taylor",
+      "profilePic": "https://randomuser.me/api/portraits/women/44.jpg",
+      "lastMessage": "I'll send you the details later.",
+      "messages": [
+        {
+          "send": true,
+          "msg": "Are we still meeting today?"
+        },
+        {
+          "send": false,
+          "msg": "Yes, let's meet at 5 PM."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "contactName": "Liam Johnson",
+      "profilePic": "https://randomuser.me/api/portraits/men/32.jpg",
+      "lastMessage": "Call me when you’re free.",
+      "messages": [
+        {
+          "send": true,
+          "msg": "Hey, can we talk now?"
+        },
+        {
+          "send": false,
+          "msg": "Not yet, I'll call you in an hour."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "contactName": "Mia Chen",
+      "profilePic": "https://randomuser.me/api/portraits/women/65.jpg",
+      "lastMessage": "Got it, thanks!",
+      "messages": [
+        {
+          "send": true,
+          "msg": "Can you confirm the schedule?"
+        },
+        {
+          "send": false,
+          "msg": "Yes, all set for 10 AM tomorrow."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "contactName": "Noah Patel",
+      "profilePic": "https://randomuser.me/api/portraits/men/43.jpg",
+      "lastMessage": "Let me check and get back to you.",
+      "messages": [
+        {
+          "send": true,
+          "msg": "What’s the status of the report?"
+        },
+        {
+          "send": false,
+          "msg": "I’m reviewing it, give me 30 minutes."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "contactName": "Ava Rodriguez",
+      "profilePic": "https://randomuser.me/api/portraits/women/23.jpg",
+      "lastMessage": "See you at the event!",
+      "messages": [
+        {
+          "send": true,
+          "msg": "Are you coming to the event?"
+        },
+        {
+          "send": false,
+          "msg": "Yes, I’ll be there at 6 PM."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "contactName": "Ethan Clark",
+      "profilePic": "https://randomuser.me/api/portraits/men/54.jpg",
+      "lastMessage": "I’ll join the call shortly.",
+      "messages": [
+        {
+          "send": true,
+          "msg": "Are you ready for the call?"
+        },
+        {
+          "send": false,
+          "msg": "Almost, just finishing up a task."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "contactName": "Isabella Martinez",
+      "profilePic": "https://randomuser.me/api/portraits/women/12.jpg",
+      "lastMessage": "Let’s finalize the proposal today.",
+      "messages": [
+        {
+          "send": true,
+          "msg": "Have you reviewed the draft proposal?"
+        },
+        {
+          "send": false,
+          "msg": "Yes, I’ve added some comments."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "contactName": "Oliver Garcia",
+      "profilePic": "https://randomuser.me/api/portraits/men/11.jpg",
+      "lastMessage": "I'll email you the file soon.",
+      "messages": [
+        {
+          "send": true,
+          "msg": "Can you share the design mockups?"
+        },
+        {
+          "send": false,
+          "msg": "Sure, give me 10 minutes."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "contactName": "Emily Lopez",
+      "profilePic": "https://randomuser.me/api/portraits/women/34.jpg",
+      "lastMessage": "That’s perfect, thank you!",
+      "messages": [
+        {
+          "send": true,
+          "msg": "Did the package arrive?"
+        },
+        {
+          "send": false,
+          "msg": "Yes, everything looks good!"
+        }
+      ]
+    }
+  ]
+}
