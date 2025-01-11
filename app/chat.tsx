@@ -26,7 +26,11 @@ const ChatScreen = () => {
   const messageRecord = contactData.contacts[parseInt(contactId) - 1].messages;
 
   const handleMessageSent = () => {
-    console.log("message: ", message);
+    contactData.contacts[parseInt(contactId)-1].messages.push({
+      "send": true,
+      "msg": message
+    })
+    setMessage("");
   };
 
   return (
